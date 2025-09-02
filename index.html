@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document HTML</title>
+  </head>
+  <body>
+    <!-- Header: phần đầu trang -->
+    <header>
+      <h1>Website Học HTML</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Nội dung chính -->
+    <main>
+      <!-- Section: giới thiệu -->
+      <section>
+        <h2>Giới thiệu</h2>
+        <p><strong>HTML</strong> là ngôn ngữ để xây dựng cấu trúc trang web.</p>
+        <img src="https://via.placeholder.com/300" alt="Ảnh minh họa HTML" />
+      </section>
+
+      <!-- Article: 1 bài viết độc lập -->
+      <article>
+        <h2>Bài viết: Tại sao học HTML?</h2>
+        <p>
+          Học HTML giúp bạn tạo nội dung web, kết hợp với CSS & JS để làm
+          website hoàn chỉnh.
+        </p>
+
+        <!-- Danh sách có thứ tự (ol) -->
+        <h3>Các bước học HTML cơ bản:</h3>
+        <ol>
+          <li>Học các thẻ HTML cơ bản (p, h1-h6, a, img…)</li>
+          <li>Học danh sách: ul, ol, li</li>
+          <li>Học bảng: table, tr, td</li>
+          <li>
+            Làm quen với các thẻ semantic (header, nav, main, section, article,
+            footer…)
+          </li>
+        </ol>
+
+        <h1>Thẻ span, hr, br</h1>
+
+        <p>
+          Tôi thích <span style="color: blue">HTML</span>,
+          <span style="color: green">CSS</span> và
+          <span style="color: orange">JavaScript</span>.
+        </p>
+
+        <hr />
+
+        <p>
+          Dùng thẻ br để xuống dòng:<br />
+          Đây là dòng thứ 2<br />
+          Đây là dòng thứ 3
+        </p>
+
+        <!-- Bảng -->
+        <h2>Ví dụ bảng (table):</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+          <tr>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Thành phố</th>
+          </tr>
+          <tr>
+            <td>Nam</td>
+            <td>20</td>
+            <td>Hà Nội</td>
+          </tr>
+          <tr>
+            <td>Lan</td>
+            <td>22</td>
+            <td>Đà Nẵng</td>
+          </tr>
+          <tr>
+            <td>Minh</td>
+            <td>19</td>
+            <td>TP.HCM</td>
+          </tr>
+        </table>
+        <h2>Ví dụ form (form):</h2>
+        <form>
+          <label for="name">Họ tên:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nhập họ tên"
+          /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Nhập email"
+          /><br /><br />
+
+          <label for="gender">Giới tính:</label><br />
+          <input type="radio" id="male" name="gender" value="Nam" />
+          <label for="male">Nam</label>
+          <input type="radio" id="female" name="gender" value="Nữ" />
+          <label for="female">Nữ</label><br /><br />
+
+          <label for="city">Chọn thành phố:</label><br />
+          <select id="city" name="city">
+            <option value="hanoi">Hà Nội</option>
+            <option value="danang">Đà Nẵng</option>
+            <option value="hcm">TP.HCM</option></select
+          ><br /><br />
+
+          <label for="message">Ghi chú:</label><br />
+          <textarea id="message" name="message" rows="4" cols="40"></textarea
+          ><br /><br />
+
+          <button type="submit">Gửi</button>
+          <button type="reset">Xóa</button>
+        </form>
+      </article>
+
+      <!-- Aside: thông tin phụ -->
+      <aside>
+        <h3>Mẹo học nhanh</h3>
+        <ul>
+          <li>Thực hành nhiều</li>
+          <li>Xem code mẫu</li>
+          <li>Dùng Live Server để test</li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- Footer: phần cuối trang -->
+    <footer>
+      <p>&copy; 2025 - Website học lập trình</p>
+    </footer>
+  </body>
+</html>
