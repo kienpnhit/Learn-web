@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Giới Thiệu Mini</title>
+  </head>
+  <body>
+    <header>
+      <h1>Xin chào, mình là ...</h1>
+      <nav>
+        <a href="#">Trang chủ</a> | <a href="#">Giới thiệu</a> |
+        <a href="#">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Giới thiệu</h2>
+        <img src="https://via.placeholder.com/200" alt="Ảnh đại diện" />
+        <p>Viết 1–2 đoạn về bản thân.</p>
+        <hr />
+      </section>
+
+      <article>
+        <h2>Sở thích & Mục tiêu</h2>
+        <h3>Sở thích</h3>
+        <ul>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+        </ul>
+
+        <h3>Mục tiêu học tập</h3>
+        <ol>
+          <li>...</li>
+          <li>...</li>
+          <li>...</li>
+        </ol>
+      </article>
+
+      <section>
+        <h2>Thông tin nhanh</h2>
+        <table border="1" cellpadding="6" cellspacing="0">
+          <tr>
+            <th>Mục</th>
+            <th>Giá trị</th>
+            <th>Ghi chú</th>
+          </tr>
+          <tr>
+            <td>Thành phố</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>Ngày bắt đầu học</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Liên hệ</h2>
+        <form>
+          <label for="name">Họ tên:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nhập họ tên"
+          /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Nhập email"
+          /><br /><br />
+
+          <label for="topic">Chủ đề:</label><br />
+          <select id="topic" name="topic">
+            <option value="question">Hỏi bài</option>
+            <option value="feedback">Góp ý</option>
+            <option value="other">Khác</option></select
+          ><br /><br />
+
+          <label for="message">Nội dung:</label><br />
+          <textarea id="message" name="message" rows="4" cols="40"></textarea
+          ><br /><br />
+
+          <button type="submit">Gửi</button>
+        </form>
+      </section>
+    </main>
+
+    <aside>
+      <h2>Mẹo học nhanh</h2>
+      <ul>
+        <li>Thực hành mỗi ngày</li>
+        <li>Dùng Live Server để xem kết quả ngay</li>
+        <li>Ghi chú lại thẻ mới học</li>
+      </ul>
+    </aside>
+
+    <footer>
+      <p>&copy; 2025 - Tên của bạn</p>
+    </footer>
+  </body>
+</html>
