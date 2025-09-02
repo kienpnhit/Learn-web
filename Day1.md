@@ -1,15 +1,11 @@
 # 📚 Buổi 1: Giới thiệu & Cài đặt môi trường học lập trình Web  
 
-## 🎯 Mục tiêu
-- Hiểu khái niệm **Frontend vs Backend**  
-- Nắm sự khác nhau giữa **website tĩnh và động**  
-- Biết **3 ngôn ngữ frontend** (HTML, CSS, JS)  
-- Cài đặt và làm quen với **Visual Studio Code (VS Code)**  
-- Thử viết file **HTML đầu tiên**  
-
----
-
 ## 📝 Nội dung chi tiết
+
+### Điều gì xảy ra khi bạn ấn vào 1 link website
+
+Nhận link ->  Trình duyệt gửi yêu cầu tới server chưa web theo địa chỉ -> lấy các file tạo web gửi lại cho trình duyệt -> trình duyệt dịch file hiển thị web
+
 
 ### 1. Giới thiệu tổng quan Web Development
 - **Frontend**: giao diện, trải nghiệm người dùng → HTML, CSS, JS  
@@ -64,4 +60,13 @@
   </html>
 ```
   -  Chạy với Live Server
+
+ ### 5.HTML là gì?
+ HTML (HyperText Markup Language) là ngôn ngữ đánh dấu siêu văn bản – dùng để tạo cấu trúc và nội dung của trang web.
+ - Không phải ngôn ngữ lập trình.
+ - Giống như bộ khung hoặc bản vẽ kiến trúc của ngôi nhà website.
+ - Trình duyệt (Chrome, Edge, Firefox…) sẽ đọc mã HTML và hiển thị ra thành văn bản, hình ảnh, nút bấm, video…
+
+ Cấu tạo của 1 phần tử html: 
+ Thẻ mở -> nội dung -> thẻ đóng
 
