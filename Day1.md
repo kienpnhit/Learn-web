@@ -59,6 +59,7 @@ Nhận link ->  Trình duyệt gửi yêu cầu tới server chưa web theo đ�
     </body>
   </html>
 ```
+Đây là cấu trúc 1 file html.
   -  Chạy với Live Server
 
  ### 5.HTML là gì?
@@ -70,3 +71,89 @@ Nhận link ->  Trình duyệt gửi yêu cầu tới server chưa web theo đ�
  Cấu tạo của 1 phần tử html: 
  Thẻ mở -> nội dung -> thẻ đóng
 
+ Các thẻ HTML cơ bản:
+ - Khai báo <!DOCTYPE> cho HTML5
+ - `<html>` Phần tử gốc định nghĩa toàn bộ tài liệu
+ - `<head>` chứa thông tin meta về trang HTML
+ - `<body>` nội dung trang web
+ - `<title>` Tiêu đề trang
+ - `<h1> -> <h6>` định nghĩa tiêu đề
+ - `<p>` định nghĩa đoạn văn
+ - `<span>` định nghĩa 1 phần đoạn văn
+ - `<a>` định nghĩa đường dẫn
+   ```<a href="https://google.com">This is a link</a>```
+ - Hình ảnh HTML được định nghĩa bằng thẻ `<img>`
+   `<img src="w3schools.jpg" alt="abc.com" width="104" height="142">`
+ - `<button>` nút bấm
+ - Bảng
+  ```
+  <table>
+    <tr>
+      <td>Emil</td>
+      <td>Tobias</td>
+      <td>Linus</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>14</td>
+      <td>10</td>
+    </tr>
+  </table>
+  ```
+  - Danh sách 
+  ```
+  ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  ```
+  ul ko có thứ tự, ol có thứ tự
+  - `<div>` đại diện 1 vùng chứa
+
+## Comment trong html
+`<!-- Write your comments here -->`
+
+## 📌 Các thẻ định dạng văn bản trong HTML
+
+- `<b>` → **Bold text** = **Chữ in đậm** (chỉ để trang trí, không nhấn mạnh ý nghĩa)  
+- `<strong>` → **Important text** = **Chữ quan trọng** (in đậm + có ý nghĩa nhấn mạnh, tốt cho SEO & screen reader)  
+
+- `<i>` → *Italic text* = *Chữ in nghiêng* (chỉ để trang trí)  
+- `<em>` → *Emphasized text* = *Chữ nhấn mạnh* (in nghiêng + có ý nghĩa nhấn mạnh, tốt cho SEO & screen reader)  
+
+- `<mark>` → ==Marked text== = **Chữ được đánh dấu (highlight)**  
+
+- `<small>` → Smaller text = **Chữ nhỏ hơn**  
+
+- `<del>` → ~~Deleted text~~ = **Chữ bị gạch bỏ** (nội dung đã xóa)  
+- `<ins>` → Inserted text = **Chữ được chèn thêm** (thường gạch chân)  
+
+- `<sub>` → Subscript text = **Chữ dưới dòng** (ví dụ: H₂O)  
+- `<sup>` → Superscript text = **Chữ trên dòng** (ví dụ: x²)
+
+  
+
+
+## 📌 Thuộc tính `target` trong thẻ `<a>`
+
+Thuộc tính **`target`** xác định nơi mở tài liệu khi click vào liên kết.  
+
+## 🔹 Các giá trị của `target`
+
+- **`_self`** (mặc định)  
+  👉 Mở link trong **cùng cửa sổ/tab hiện tại**.  
+
+- **`_blank`**  
+  👉 Mở link trong **cửa sổ hoặc tab mới**.  
+
+- **`_parent`**  
+  👉 Mở link trong **khung cha (parent frame)**.  
+  (Thường dùng khi trang có nhiều frame lồng nhau.)  
+
+- **`_top`**  
+  👉 Mở link trong **toàn bộ cửa sổ trình duyệt**, thay thế toàn bộ frame.  
+
+  
+   
+ 
