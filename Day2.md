@@ -36,17 +36,23 @@ Một bảng cơ bản bao gồm:
     <td>Đà Nẵng</td>
   </tr>
 </table>
+```
 
 ### 2. Website tĩnh vs động - **Static website**: chỉ HTML/CSS/JS → nội dung cố
+
 định - **Dynamic website**: backend xử lý dữ liệu → nội dung thay đổi 👉 Ví dụ:
+
 - Tĩnh: portfolio cá nhân - Động: Facebook, Shopee --- ### 3. 3 ngôn ngữ
-frontend - **HTML (Nouns)**: nội dung trang web - **CSS (Adjectives)**: định
-dạng, màu sắc, bố cục - **JavaScript (Verbs)**: hành động, sự kiện, logic ---
+  frontend - **HTML (Nouns)**: nội dung trang web - **CSS (Adjectives)**: định
+  dạng, màu sắc, bố cục - **JavaScript (Verbs)**: hành động, sự kiện, logic ---
+
 ### 4. Cài đặt VS Code - **Tải và cài đặt**: Truy cập
+
 https://code.visualstudio.com - **Cài Extensions cần thiết**: - Live Server (by
 Ritwick Dey) → chạy web trực tiếp - Prettier → format code đẹp - HTML CSS
 Support → gợi ý code - Auto Rename Tag → đổi tên thẻ tự động - **Tạo dự án đầu
 tiên**: - Tạo thư mục `my-first-website` - Tạo file `index.html` với nội dung
+
 ```
 
   <!DOCTYPE html>
