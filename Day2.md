@@ -1,8 +1,26 @@
-# 📚 Buổi 1: Table, Form input & Layout trong HTML
+# 📚 Buổi 2: Table, Form input 
 
-## 📝 Nội dung chi tiết
+### 1. Nội dung chi tiết
 
-### 1. Table
+# Inline và Block trong HTML
+
+**Khái niệm**
+- **Inline element**: Là phần tử hiển thị **trên cùng một dòng** với nội dung xung quanh. Nó chỉ chiếm không gian vừa đủ cho nội dung bên trong.
+- **Block element**: Là phần tử **chiếm toàn bộ chiều ngang** của thẻ cha, đẩy nội dung tiếp theo xuống một dòng mới.
+
+**Ví dụ**
+
+### Inline elements
+- `<span>`: dùng để bao bọc một đoạn text nhỏ.
+- `<a>`: liên kết.
+- `<strong>`, `<em>`: nhấn mạnh chữ.
+
+### Block elements
+- `<div>`: khối bao tổng quát.
+- `<p>`: đoạn văn bản.
+- `<h1> → <h6>`: tiêu đề.
+
+### 2. Table
 
 # Giới thiệu về Table
 
@@ -13,8 +31,8 @@ Một bảng cơ bản bao gồm:
 - `<tr>` (Table Row): Hàng trong bảng.
 - `<th>` (Table Header): Ô tiêu đề (thường in đậm, canh giữa).
 - `<td>` (Table Data): Ô dữ liệu.
-
----
+- `colspan`: gộp cột
+- `rowspan`: gộp hàng
 
 ## Ví dụ cơ bản
 
@@ -37,135 +55,92 @@ Một bảng cơ bản bao gồm:
   </tr>
 </table>
 ```
+# Giới thiệu HTML Form
 
-### 2. Website tĩnh vs động - **Static website**: chỉ HTML/CSS/JS → nội dung cố
+HTML **form** dùng để thu thập dữ liệu từ người dùng và gửi về server.
 
-định - **Dynamic website**: backend xử lý dữ liệu → nội dung thay đổi 👉 Ví dụ:
+## 1) Thẻ căn bản
+- `<form>`: bao toàn bộ biểu mẫu.
+- `<label>`: nhãn mô tả cho control (liên kết bằng `for` → `id`).
+- `<input>`: nhiều loại điều khiển (text, email, file, …).
+- `<select>` + `<option>` (+ `<optgroup>`): danh sách chọn.
+- `<textarea>`: vùng nhập nhiều dòng.
+- `<button>`: nút bấm (`type="submit" | "reset" | "button"`).
+- `<fieldset>` & `<legend>`: nhóm và tiêu đề nhóm trường.
 
-- Tĩnh: portfolio cá nhân - Động: Facebook, Shopee --- ### 3. 3 ngôn ngữ
-  frontend - **HTML (Nouns)**: nội dung trang web - **CSS (Adjectives)**: định
-  dạng, màu sắc, bố cục - **JavaScript (Verbs)**: hành động, sự kiện, logic ---
+## 2) Thuộc tính quan trọng của `<form>` (Chưa cần ghi nhớ)
+- `action`: URL nhận dữ liệu.
+- `method`: phương thức gửi — `GET` (hiện query trên URL) / `POST` (gửi trong body).
+- `enctype`: kiểu mã hoá dữ liệu, dùng khi upload file:
+  - Mặc định: `application/x-www-form-urlencoded`
+  - File: `multipart/form-data`
+  - JSON (tuỳ backend): gửi qua JS `fetch`/XHR.
+- `autocomplete="on|off"`: gợi ý tự động.
+- `novalidate`: bỏ kiểm tra HTML5 (không khuyến nghị).
 
-### 4. Cài đặt VS Code - **Tải và cài đặt**: Truy cập
+## 3) Thuộc tính hay dùng trên control
+- Chung: `id`, `name` (tên trường khi submit), `value`, `required`, `disabled`, `readonly`, `placeholder`, `autocomplete`.
+- Ràng buộc: `min`, `max`, `step`, `minlength`, `maxlength`, `pattern`.
+- Khác:
+  - `multiple` (nhiều giá trị: file, email, select).
+  - `accept` (kiểu file cho `<input type="file">`).
+  - `checked` (mặc định cho checkbox/radio).
+  - `selected` (mặc định cho option).
+ 
+  Đọc thêm tại link: https://www.w3schools.com/html/html_form_input_types.asp
+    
 
-https://code.visualstudio.com - **Cài Extensions cần thiết**: - Live Server (by
-Ritwick Dey) → chạy web trực tiếp - Prettier → format code đẹp - HTML CSS
-Support → gợi ý code - Auto Rename Tag → đổi tên thẻ tự động - **Tạo dự án đầu
-tiên**: - Tạo thư mục `my-first-website` - Tạo file `index.html` với nội dung
+## 4) Các `input type` thường gặp
+- Văn bản: `text`, `password`, `email`, `search`, `tel`, `url`
+- Số & phạm vi: `number`, `range`
+- Ngày giờ: `date`, `time`, `datetime-local`, `month`, `week`
+- Chọn lựa: `checkbox`, `radio`, `color`, `file`
+- Hành động: `submit`, `reset`, `button`, `image`, `hidden`
 
-```
+## 5) Ví dụ nhanh (đầy đủ nhãn, ràng buộc, nhóm trường)
+```html
+<form action="/signup" method="POST" enctype="multipart/form-data" autocomplete="on">
+  <fieldset>
+    <legend>Thông tin tài khoản</legend>
 
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="UTF-8">
-      <title>Website đầu tiên</title>
-    </head>
-    <body>
-      <h1>Hello World!</h1>
-      <p>Tôi đang học HTML, CSS và JavaScript.</p>
-    </body>
-  </html>
-```
+    <label for="email">Email *</label>
+    <input id="email" name="email" type="email" required placeholder="you@example.com" />
 
-Đây là cấu trúc 1 file html.
+    <label for="pwd">Mật khẩu *</label>
+    <input id="pwd" name="password" type="password" required minlength="8" />
 
-- Chạy với Live Server
+    <label for="age">Tuổi</label>
+    <input id="age" name="age" type="number" min="1" max="120" step="1" />
 
-### 5.HTML là gì?
+    <label for="avatar">Ảnh đại diện</label>
+    <input id="avatar" name="avatar" type="file" accept="image/*" />
+  </fieldset>
 
-HTML (HyperText Markup Language) là ngôn ngữ đánh dấu siêu văn bản – dùng để tạo cấu trúc và nội dung của trang web.
+  <fieldset>
+    <legend>Tùy chọn</legend>
 
-- Không phải ngôn ngữ lập trình.
-- Giống như bộ khung hoặc bản vẽ kiến trúc của ngôi nhà website.
-- Trình duyệt (Chrome, Edge, Firefox…) sẽ đọc mã HTML và hiển thị ra thành văn bản, hình ảnh, nút bấm, video…
+    <p>Giới tính:</p>
+    <label><input type="radio" name="gender" value="male" /> Nam</label>
+    <label><input type="radio" name="gender" value="female" /> Nữ</label>
 
-Cấu tạo của 1 phần tử html:
-Thẻ mở -> nội dung -> thẻ đóng
+    <label for="skills">Kỹ năng</label>
+    <select id="skills" name="skills[]" multiple>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+    </select>
 
-Các thẻ HTML cơ bản:
+    <label for="bio">Giới thiệu</label>
+    <textarea id="bio" name="bio" rows="3" placeholder="Tôi là..."></textarea>
 
-- Khai báo <!DOCTYPE> cho HTML5
-- `<html>` Phần tử gốc định nghĩa toàn bộ tài liệu
-- `<head>` chứa thông tin meta về trang HTML
-- `<body>` nội dung trang web
-- `<title>` Tiêu đề trang
-- `<h1> -> <h6>` định nghĩa tiêu đề
-- `<p>` định nghĩa đoạn văn
-- `<span>` định nghĩa 1 phần đoạn văn
-- `<a>` định nghĩa đường dẫn
-  `<a href="https://google.com">This is a link</a>`
-- Hình ảnh HTML được định nghĩa bằng thẻ `<img>`
-  `<img src="w3schools.jpg" alt="abc.com" width="104" height="142">`
-- `<button>` nút bấm
-- Bảng
+    <label>
+      <input type="checkbox" name="tos" required />
+      Tôi đồng ý với điều khoản
+    </label>
+  </fieldset>
 
-```
-<table>
-  <tr>
-    <td>Emil</td>
-    <td>Tobias</td>
-    <td>Linus</td>
-  </tr>
-  <tr>
-    <td>16</td>
-    <td>14</td>
-    <td>10</td>
-  </tr>
-</table>
-```
+  <button type="submit">Đăng ký</button>
+  <button type="reset">Làm lại</button>
+</form>
 
-- Danh sách
 
-```
-ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ul>
-```
-
-ul ko có thứ tự, ol có thứ tự
-
-- `<div>` đại diện 1 vùng chứa
-
-## Comment trong html
-
-`<!-- Write your comments here -->`
-
-## 📌 Các thẻ định dạng văn bản trong HTML
-
-- `<b>` → **Bold text** = **Chữ in đậm** (chỉ để trang trí, không nhấn mạnh ý nghĩa)
-- `<strong>` → **Important text** = **Chữ quan trọng** (in đậm + có ý nghĩa nhấn mạnh, tốt cho SEO & screen reader)
-
-- `<i>` → _Italic text_ = _Chữ in nghiêng_ (chỉ để trang trí)
-- `<em>` → _Emphasized text_ = _Chữ nhấn mạnh_ (in nghiêng + có ý nghĩa nhấn mạnh, tốt cho SEO & screen reader)
-
-- `<mark>` → ==Marked text== = **Chữ được đánh dấu (highlight)**
-
-- `<small>` → Smaller text = **Chữ nhỏ hơn**
-
-- `<del>` → ~~Deleted text~~ = **Chữ bị gạch bỏ** (nội dung đã xóa)
-- `<ins>` → Inserted text = **Chữ được chèn thêm** (thường gạch chân)
-
-- `<sub>` → Subscript text = **Chữ dưới dòng** (ví dụ: H₂O)
-- `<sup>` → Superscript text = **Chữ trên dòng** (ví dụ: x²)
-
-## 📌 Thuộc tính `target` trong thẻ `<a>`
-
-Thuộc tính **`target`** xác định nơi mở tài liệu khi click vào liên kết.
-
-## 🔹 Các giá trị của `target`
-
-- **`_self`** (mặc định)  
-  👉 Mở link trong **cùng cửa sổ/tab hiện tại**.
-
-- **`_blank`**  
-  👉 Mở link trong **cửa sổ hoặc tab mới**.
-
-- **`_parent`**  
-  👉 Mở link trong **khung cha (parent frame)**.  
-  (Thường dùng khi trang có nhiều frame lồng nhau.)
-
-- **`_top`**  
-  👉 Mở link trong **toàn bộ cửa sổ trình duyệt**, thay thế toàn bộ frame.
