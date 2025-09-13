@@ -142,5 +142,191 @@ HTML **form** dùng để thu thập dữ liệu từ người dùng và gửi v
   <button type="submit">Đăng ký</button>
   <button type="reset">Làm lại</button>
 </form>
+```
+### Semantic HTML
+
+# Bảng tóm tắt Semantic HTML
+
+| Thẻ         | Ý nghĩa                                           | Ví dụ ngắn |
+|-------------|---------------------------------------------------|------------|
+| `<article>` | Khối nội dung **tự chứa**, độc lập (bài viết, card tin) | `<article><h2>Bài blog</h2><p>Nội dung...</p></article>` |
+| `<aside>`   | Nội dung **phụ** (sidebar, liên kết liên quan)    | `<aside><h3>Bài liên quan</h3></aside>` |
+| `<details>` | Khối có thể **mở/đóng** để ẩn/hiện nội dung       | `<details><summary>Xem thêm</summary><p>Chi tiết...</p></details>` |
+| `<summary>` | Tiêu đề của `<details>`, bấm vào để mở/đóng        | *(dùng chung với `<details>`)* |
+| `<figure>`  | Gói nội dung minh họa (ảnh, biểu đồ, code block) | `<figure><img src="a.png"><figcaption>Mô tả</figcaption></figure>` |
+| `<figcaption>` | Chú thích cho `<figure>`                        | *(dùng kèm trong `<figure>`)* |
+| `<footer>`  | Chân trang (trang hoặc khối nội dung)             | `<footer>© 2025 MySite</footer>` |
+| `<header>`  | Phần đầu (tiêu đề, logo, meta) của trang hoặc khối| `<header><h1>Tech Blog</h1></header>` |
+| `<main>`    | Nội dung **chính** của trang (chỉ có 1)           | `<main><h2>Bài nổi bật</h2></main>` |
+| `<mark>`    | Tô sáng đoạn văn bản                              | `<p>Cẩn thận với <mark>XSS</mark></p>` |
+| `<nav>`     | Vùng **điều hướng** (menu, breadcrumb)            | `<nav><a href="/">Home</a></nav>` |
+| `<section>` | Nhóm nội dung theo **chủ đề**, có tiêu đề         | `<section><h2>Giới thiệu</h2><p>...</p></section>` |
+| `<time>`    | Biểu diễn **thời gian** có thể máy hiểu           | `<time datetime="2025-09-14">14/09/2025</time>` |
+
+Ví dụ:
+
+```
+<header>
+  <h1>Tech Blog</h1>
+  <nav aria-label="Chính">
+    <a href="/">Trang chủ</a>
+    <a href="/bai-viet">Bài viết</a>
+    <a href="/lien-he">Liên hệ</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <header>
+      <h2>Hiểu nhanh Semantic HTML</h2>
+      <p>Xuất bản <time datetime="2025-09-14">14/09/2025</time></p>
+    </header>
+
+    <section>
+      <h3>Tóm tắt</h3>
+      <p>Dùng thẻ có ý nghĩa giúp <mark>SEO</mark> & Accessibility.</p>
+    </section>
+
+    <figure>
+      <img src="semantic.png" alt="Cấu trúc semantic" />
+      <figcaption>Bố cục header / main / footer.</figcaption>
+    </figure>
+
+    <details>
+      <summary>Chi tiết kỹ thuật</summary>
+      <p>Sử dụng <code>&lt;section&gt;</code> cho nhóm chủ đề,
+         <code>&lt;article&gt;</code> cho khối tự chứa.</p>
+    </details>
+
+    <footer>
+      <small>Tác giả: Kiên • <a href="/tac-gia/kien" rel="author">Hồ sơ</a></small>
+    </footer>
+  </article>
+
+  <aside aria-label="Bài liên quan">
+    <h3>Bạn có thể thích</h3>
+    <ul>
+      <li><a href="#">Heading đúng chuẩn</a></li>
+      <li><a href="#">Alt text cho hình ảnh</a></li>
+    </ul>
+  </aside>
+</main>
+
+<footer>
+  <small>© 2025 Tech Blog</small>
+</footer>
+```
+# SEO và Semantic HTML
+
+## `<header>` / `<footer>`
+- **SEO**:  
+  - `<header>` giúp công cụ tìm kiếm nhận diện **phần mở đầu** (logo, nav chính, tiêu đề).  
+  - `<footer>` thường chứa liên kết phụ, thông tin liên hệ, bản quyền → Google đánh giá như "secondary content".  
+- **Best practice**:  
+  - Trong `<header>` đặt 1 **`<h1>` duy nhất** đại diện cho toàn trang.  
+  - `<footer>` nên có **schema info** như `address`, `contact`.
+
+---
+
+## `<nav>`
+- **SEO**:  
+  - Giúp Googlebot dễ crawling, hiểu cấu trúc điều hướng.  
+  - Anchor text trong `<nav>` quan trọng cho internal link SEO.  
+- **Best practice**:  
+  - Đặt menu chính trong `<nav>`.  
+  - Dùng **text link** thay vì icon hoặc hình ảnh.  
+  - Nếu có nhiều `<nav>` → thêm `aria-label` để phân biệt.
+
+---
+
+## `<main>`
+- **SEO**:  
+  - Nói cho Google biết đâu là **nội dung chính** của trang.  
+  - Nội dung trong `<main>` có trọng số cao hơn so với aside/sidebar.  
+- **Best practice**:  
+  - Chỉ **1 `<main>` duy nhất**.  
+  - Đặt bài viết, sản phẩm, nội dung chính bên trong.
+
+---
+
+## `<article>`
+- **SEO**:  
+  - Rất tốt cho blog/news/product → Google coi như **content unit độc lập**.  
+  - Có thể hiển thị trong Google News/Discover nếu có metadata chuẩn.  
+- **Best practice**:  
+  - Mỗi `<article>` nên có `<h2>` tiêu đề riêng.  
+  - Có thể chứa `<header>` và `<footer>` riêng.
+
+---
+
+## `<section>`
+- **SEO**:  
+  - Giúp phân chia nội dung **theo chủ đề**, hỗ trợ tạo **rich snippets** nếu có schema markup.  
+- **Best practice**:  
+  - Mỗi `<section>` nên có heading (`<h2>`, `<h3>`).  
+  - Không lạm dụng (chỉ dùng khi có ý nghĩa rõ ràng).
+
+---
+
+## `<aside>`
+- **SEO**:  
+  - Nội dung trong `<aside>` bị coi là **phụ** (ads, related posts).  
+  - Google hiểu là không phải core content.  
+- **Best practice**:  
+  - Dùng cho "Bài liên quan", "Tài liệu tham khảo".  
+  - Không nhồi nhét từ khóa.
+
+---
+
+## `<h1>` … `<h6>`
+- **SEO**:  
+  - Rất quan trọng cho **cấu trúc nội dung**.  
+  - `<h1>` là **tiêu đề chính** trang.  
+  - Heading khác giúp Google hiểu dàn ý.  
+- **Best practice**:  
+  - Chỉ **1 `<h1>`/trang**.  
+  - Dùng `<h2>`, `<h3>` theo cây logic, không nhảy cấp.
+
+---
+
+## `<figure>` / `<figcaption>` / `<img alt="">`
+- **SEO**:  
+  - Ảnh ảnh hưởng đến **Google Image Search**.  
+  - `alt` text giúp Google hiểu nội dung ảnh.  
+- **Best practice**:  
+  - Mỗi `<img>` cần `alt` mô tả đúng.  
+  - Nếu ảnh quan trọng → bọc `<figure>` + `<figcaption>`.
+
+---
+
+## `<time>`
+- **SEO**:  
+  - Giúp Google nhận diện **ngày đăng / cập nhật** → quan trọng cho News/Blog.  
+- **Best practice**:  
+  - Dùng `datetime="YYYY-MM-DD"`.  
+  - Ví dụ: `<time datetime="2025-09-14">14/09/2025</time>`.
+
+---
+
+## `<mark>`
+- **SEO**:  
+  - Không ảnh hưởng trực tiếp, nhưng hỗ trợ **UX** khi highlight từ khóa.  
+- **Best practice**:  
+  - Dùng khi muốn nhấn mạnh keyword trên trang tìm kiếm nội bộ.
+
+---
+
+# Checklist SEO với Semantic HTML
+- [x] Mỗi trang có **1 `<h1>` duy nhất**  
+- [x] Nội dung chính nằm trong `<main>`  
+- [x] Bài viết/blog dùng `<article>`  
+- [x] Dùng heading hợp lý (H1 → H2 → H3)  
+- [x] Hình ảnh có `alt` mô tả đúng, thêm `<figure>/<figcaption>` nếu cần  
+- [x] Điều hướng chính đặt trong `<nav>`  
+- [x] Dùng `<time>` cho ngày tháng rõ ràng  
+
+---
+
+👉 Semantic HTML không tự tăng SEO rank, nhưng giúp Google **hiểu cấu trúc**, dễ tạo **rich results** và cải thiện trải nghiệm người dùng.
 
 
