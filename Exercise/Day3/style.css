@@ -1,0 +1,70 @@
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+header {
+  padding: 20px;
+}
+
+header h1 {
+  color: #b2d8ce;
+  letter-spacing: 0.5px;
+  word-spacing: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 5px gray;
+  direction: rtl;
+}
+
+header p span {
+vertical-align: baseline;
+}
+
+header p {
+  text-indent: 1%;
+  line-height: 1;
+}
+
+main {
+  background-color: #648db3;
+}
+
+footer {
+  background-color: #52357b;
+  padding: 20px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+#px {
+    font-size: 20px;
+}
+
+#rem {
+    font-size: 1.5rem;
+}
+
+#em {
+    font-size: 2em;
+}
+
+#phantram {
+    font-size: 100%;
+}
+
+.title {
+    text-align: center;
+    padding: 20px 0;
+}
