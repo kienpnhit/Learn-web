@@ -1,8 +1,6 @@
 # 📚 Buổi 2: Table, Form input 
 
-### 1. Nội dung chi tiết
-
-# Inline và Block trong HTML
+### 1. Inline và Block trong HTML
 
 **Khái niệm**
 - **Inline element**: Là phần tử hiển thị **trên cùng một dòng** với nội dung xung quanh. Nó chỉ chiếm không gian vừa đủ cho nội dung bên trong.
@@ -143,7 +141,7 @@ HTML **form** dùng để thu thập dữ liệu từ người dùng và gửi v
   <button type="reset">Làm lại</button>
 </form>
 ```
-### Semantic HTML
+### 3. Semantic HTML
 
 # Bảng tóm tắt Semantic HTML
 
