@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2 Semantic</title>
+  </head>
+  <body>
+    <!-- <article> chứa nhiều <section> -->
+    <main>
+      <article>
+        <header>
+          <h1>Tối ưu SEO cho SPA</h1>
+          <p>Tác giả Kiên • <time datetime="2025-09-09">09/09/2025</time></p>
+        </header>
+
+        <section aria-labelledby="intro">
+          <h2 id="intro">Giới thiệu</h2>
+          <p>…</p>
+        </section>
+
+        <section aria-labelledby="techniques">
+          <h2 id="techniques">Kỹ thuật</h2>
+          <h3>SSR/SSG</h3>
+          <p>…</p>
+          <h3>Hydration</h3>
+          <p>…</p>
+        </section>
+
+        <section aria-labelledby="conclusion">
+          <h2 id="conclusion">Kết luận</h2>
+          <p>…</p>
+        </section>
+
+        <footer>
+          <p>Tags: SEO, SPA</p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

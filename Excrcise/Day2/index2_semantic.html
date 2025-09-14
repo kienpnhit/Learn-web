@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ví dụ HTML Semantic</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tech Blog</h1>
+      <nav aria-label="Chính">
+        <a href="/">Trang chủ</a>
+        <a href="/bai-viet">Bài viết</a>
+        <a href="/lien-he">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header>
+          <h2>Hiểu nhanh Semantic HTML</h2>
+          <p>Xuất bản <time datetime="2025-09-14">14/09/2025</time></p>
+        </header>
+
+        <section>
+          <h3>Tóm tắt</h3>
+          <p>Dùng thẻ có ý nghĩa giúp <mark>SEO</mark> & Accessibility.</p>
+        </section>
+
+        <figure>
+          <img src="semantic.png" alt="Cấu trúc semantic" />
+          <figcaption>Bố cục header / main / footer.</figcaption>
+        </figure>
+
+        <details>
+          <summary>Chi tiết kỹ thuật</summary>
+          <p>
+            Sử dụng <code>&lt;section&gt;</code> cho nhóm chủ đề,
+            <code>&lt;article&gt;</code> cho khối tự chứa.
+          </p>
+        </details>
+
+        <footer>
+          <small
+            >Tác giả: Kiên •
+            <a href="/tac-gia/kien" rel="author">Hồ sơ</a></small
+          >
+        </footer>
+      </article>
+
+      <aside aria-label="Bài liên quan">
+        <h3>Bạn có thể thích</h3>
+        <ul>
+          <li><a href="#">Heading đúng chuẩn</a></li>
+          <li><a href="#">Alt text cho hình ảnh</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <small>© 2025 Tech Blog</small>
+    </footer>
+  </body>
+</html>
