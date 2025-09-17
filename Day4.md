@@ -28,3 +28,66 @@
 | `background-blend-mode`      | Cách trộn giữa các lớp nền  | `multiply`, `screen`, `overlay`, …                                                       | `normal`                | Áp dụng khi có **nhiều lớp** (màu + ảnh/gradient)                                                                                                                      |
 | `background-image: gradient` | Gradient như ảnh nền        | `linear-gradient(45deg, red, blue)`, `radial-gradient(...)`, `conic-gradient(...)`       | —                       | Là **ảnh nền tạo bởi CSS**, kết hợp được với các lớp khác                                                                                                              |
 
+### Border
+
+| Thuộc tính                      | Ý nghĩa                           | Giá trị thường dùng                                                                 | Ghi chú / Mẹo                                                     |
+| ------------------------------- | --------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `border` (shorthand)            | Gộp **width style color**         | `1px solid #ddd`                                                                    | Thứ tự: `width` → `style` → `color` (có thể đảo, miễn đúng loại). |
+| `border-width`                  | Độ dày viền                       | `thin`, `medium`, `thick`, `0`, `2px`, `0.25rem`                                    | Ảnh hưởng kích thước hộp (trừ khi `box-sizing: border-box`).      |
+| `border-style`                  | Kiểu viền                         | `none`, `solid`, `dashed`, `dotted`, `double`, `groove`, `ridge`, `inset`, `outset` | Nếu `style: none`, viền không hiển thị dù có `width/color`.       |
+| `border-color`                  | Màu viền                          | `#000`, `rgb()`, `hsl()`, `transparent`, `currentColor`                             | Có thể set 1–4 giá trị (trên–phải–dưới–trái).                     |
+| `border-top/right/bottom/left`  | Viền từng cạnh (shorthand)        | `border-top: 2px dashed red;`                                                       | Có phiên bản chi tiết: `border-top-width/style/color`.            |
+| `border-block`, `border-inline` | Viền theo **trục writing-mode**   | `border-block: 1px solid;`                                                          | Hữu ích cho i18n (dọc/ngang). Có `*-start`, `*-end`.              |
+| `border-radius`                 | Bo góc                            | `8px`, `50%`, `8px 16px`, `8px/16px`                                                | 1–4 giá trị; dùng `50%` để tạo tròn/oval (kèm `width=height`).    |
+| `border-start-start-radius`…    | Bo góc theo trục logic            | `12px`                                                                              | Thay thế `border-top-left-radius` theo writing-mode.              |
+| `border-image` (shorthand)      | Dùng ảnh/gradient làm viền        | `border-image: url(frame.png) 30 fill / 10px round;`                                | Cần **`border-style` ≠ `none`** (ví dụ `solid`) để hiển thị.      |
+| `outline` (liên quan)           | Viền ngoài **không chiếm layout** | `outline: 2px solid blue;`                                                          | Dùng cho focus/khả năng truy cập; **khác** `border`.              |
+| `box-sizing` (liên quan)        | Cách tính kích thước              | `content-box` \| `border-box`                                                       | Với `border-box`, `width/height` **đã gồm** border & padding.     |
+| `background-clip` (liên quan)   | Phạm vi nền                       | `border-box` \| `padding-box` \| `content-box`                                      | Tránh nền “đổ” dưới viền khi cần.                                 |
+
+### 5. Margin & Padding
+**Khái niệm**
+- Padding: khoảng đệm bên trong phần tử — giữa nội dung và viền (border).
+- Margin: khoảng trống bên ngoài phần tử — giữa viền của nó và phần tử/biên xung quanh.
+
+|<--------- margin --------->|
+[  border  [   padding   [content]   ]  border  ]
+|<---------------- element box ---------------->|
+
+**So sánh**
+
+| Tiêu chí                   | Padding                                | Margin                                     |
+| -------------------------- | -------------------------------------- | ------------------------------------------ |
+| Vị trí                     | Bên **trong** border                   | Bên **ngoài** border                       |
+| Ảnh hưởng nền (background) | **Có**: background “tràn” vào padding  | **Không**: background không phủ margin     |
+| Có thể âm (negative)       | ❌ Không                                | ✅ Có (ví dụ `margin-top: -8px`)            |
+| Ảnh hưởng layout           | Tăng kích thước hộp (trừ `border-box`) | Tạo khoảng cách với xung quanh             |
+| Tác dụng căn giữa          | ❌                                      | ✅ `margin: 0 auto` (khối có width cố định) |
+| Collapsing (chồng lấn)     | ❌ Không                                | ✅ Có trên trục dọc giữa các block          |
+
+**CÚ pháp**
+
+```
+/* Shorthand: 1–4 giá trị (top right bottom left) */
+.box { padding: 16px; }              /* 4 cạnh */
+.box { padding: 8px 12px; }          /* trên-dưới | trái-phải */
+.box { padding: 8px 12px 20px; }     /* trên | trái-phải | dưới */
+.box { padding: 8px 12px 20px 4px; } /* trên | phải | dưới | trái */
+
+/* Từng cạnh */
+.box { padding-top: 12px; padding-inline-start: 1rem; } /* logical props */
+```
+
+```
+/* Shorthand: 1–4 giá trị */
+.card { margin: 24px; }
+.card { margin: 0 16px; }
+.card { margin: 8px 16px 24px; }
+.card { margin: 4px 8px 12px 16px; }
+
+/* Từng cạnh */
+.card { margin-bottom: 12px; margin-inline: auto; } /* logical props */
+
+/* Căn giữa khối có width cố định */
+.container { width: 600px; margin: 0 auto; }
+```
